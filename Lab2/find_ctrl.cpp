@@ -4,9 +4,14 @@
 
 char find_ctrl(const char * card)
 {
-    int length = strlen(card); // sprawdzam dlugosc numeru karty
-    int suma = 0; //zmienna przechowujaca sume cyfr
-    int c=0, pom=0;// zmienne pomocnicze do liczenia wyniku
+    /**
+            Calculate control number
+             @param card Card number whose control number we want to calculate
+             @return control number, contained in ctrl
+     */
+    int length = strlen(card);
+    int suma = 0;
+    int c=0, pom=0;
 
     for(int i=length-1; i>=0 ;i--)
     {

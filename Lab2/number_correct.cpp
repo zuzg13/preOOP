@@ -2,8 +2,14 @@
 
 bool number_correct(const char * card)
 {
-    char ctrl = find_ctrl(card); //odwoluje sie do funkcji find_ctrl zeby sprawdzic wartosc cyfry kontrolnej
-    if(ctrl == '0') // zwracanie odpowiednich wartosci
+    /**
+     * Check if control number of card is correct or not
+     *
+     * @param card Card number whose control number we want to check
+     * @return true if number is correct or false if it's not
+     */
+    char ctrl = find_ctrl(card);
+    if(ctrl == '0')
         return true;
     else
         return false;
