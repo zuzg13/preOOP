@@ -2,24 +2,40 @@
 #include <cstdlib>
 #include <cstring>
 
-void prepareList(char***, int**, int);
-/**<\fn funkcja alokujaca pamięć dla startowej ilości studentów (2)
+void prepareList(char*** name, int** year, int cap);
+/**<\fn Memory allocation for lists of students  (2)
  *
- * @param name - wskaźnik na tablicę imion i nazwisk - którą w tej funkcji alokujemy
- * @param year - wskaźnik na tablicę roku studiów
- * @param cap - zmienna pomocnicza przechowująca dla ilu studentów jest alokowana początkowo pamięć
+ * @param name - pointer to array of students' names, I allocate memory for this array
+ * @param year - pointer to array of studetns' years of studying
+ * @param cap - contains capacity of array of students
  */
-void addStudent(int* , int * , char*** , int ** , const char *, const char *, int);
-/**< \fn funkcja dodająca studentów do listy
+void addStudent(int* number, int * cap, char*** names , int ** years , const char * fname, const char *sname, int y);
+/**< \fn Add students to array
  *
- * @param number -wskaznik na zmienną, informujaca nas ilu studentow zostalo juz wpisanych do listy
- * @param cap - zmienna informujaca na ile studentow zostala zaalokowana pamiec w liscie, w funkcji @prepareList
- * @param names - wskaznik na tablice imion i nazwisk
- * @param years - wskaznik na tablie lat studiow
- * @param fname - zmienna przechowujaca imie dodawanego studenta
- * @param sname - zmienna przechowujaca nazwisko dodawanego studenta
- * @param y - zmienna przechowujaca rok studiow dodawanego studenta
+ * @param number - pointer to variable containing number of students that are already added do array
+ * @param cap - pointer to variable containing capacity in students array
+ * @param names - pointer to array of students' names
+ * @param years - pointer to array of studetns' years
+ * @param fname - added student's first name
+ * @param sname - added student's second name
+ * @param y - added student's year of studying
  */
-void printListContent (int, char **);
-void printAllListContent (int , char **, int *);
-void clearStudents (int * , int *, char ***, int **);
+void printListContent (int cap, char **names);
+/** print students' names from list
+ * @param cap - size of list
+ * @param names - list of names
+ */
+
+void printAllListContent (int cap, char ** names, int * years);
+/** print students' names and years of studying from list
+ * @param cap  - size of list
+ * @param names  - list of names
+ * @param years - list of years
+ */
+void clearStudents (int * cap , int * number , char *** names , int ** years);
+/** clear student from list
+ * @param cap - size of list
+ * @param number - number of students to clear
+ * @param names - list of students
+ * @param years - list of years of studying
+ */
