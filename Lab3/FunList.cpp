@@ -1,6 +1,5 @@
 #include "StudentList.h"
 
-/// \file
 
 void prepareList(char *** name, int ** year, int cap)
 {
