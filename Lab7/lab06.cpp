@@ -1,6 +1,6 @@
 // Celem zadania jest zapoznanie się z klasami, referencjami i kwalifikatorem const.
 
-/// Proszę napisać klasę Coordinates opisującą współrzędne punktu na mapie 
+// Proszę napisać klasę Coordinates opisującą współrzędne punktu na mapie
 // i klasę Distance opisującą odległość na mapie.
 
 //  UWAGI:

@@ -2,49 +2,42 @@
 
 Distance :: Distance(double _latitude, double _longitude, double _distan)
 {
-    this->latitude=_latitude;
-    this->longitude=_longitude;
-    this->distan=_distan;
+    latitude=_latitude;
+    longitude=_longitude;
+    distan=_distan;
 }
 double Distance :: get_latitude() const
 {
-    return this->latitude;
+    return latitude;
 }
 double Distance :: get_longitude() const 
 {
-    return this->longitude;
+    return longitude;
 }
 double Distance :: dist() const
 {
-    return this->distan;
+    return distan;
 }
 
 Coordinates :: Coordinates(string _name, double _latitude, double _longitude)
 {
-    this->Name=_name;
-    this->Latitude=_latitude;
-    this->Longitude=_longitude;
+    Name=_name;
+    Latitude=_latitude;
+    Longitude=_longitude;
 }
 
 void Coordinates :: print() const 
 {
-    std :: cout << this->Name<<" ";
-    if((this->Latitude)>=0)
-    {
-        std :: cout << this->Latitude<<"N ";
-    }
+    std :: cout << Name <<" ";
+    if((Latitude)>=0)
+        std :: cout << Latitude<<"N ";
     else
-    {
-        std :: cout << (this->Latitude)*(-1.0)<<"S ";
-    }
-    if((this->Longitude)>=0)
-    {
-        std :: cout << this->Longitude<<"E ";
-    }
+        std :: cout << (Latitude)*(-1.0)<<"S ";
+    if((Longitude)>=0)
+        std :: cout << Longitude<<"E ";
     else
-    {
-        std :: cout << (this->Longitude)*(-1.0)<<"W ";
-    }
+        std :: cout << (Longitude)*(-1.0)<<"W ";
+
     std :: cout << std :: endl;
     
 }
@@ -53,40 +46,39 @@ void Coordinates :: print() const
 
 void Coordinates :: move(double lat, double longi)
 {
-    this->Latitude+=lat;
-    this->Longitude+=longi;
+    Latitude+=lat;
+    Longitude+=longi;
 }
 
 string Coordinates :: name() const
 {
-    return (this->Name);
+    return (Name);
 }
 double Coordinates :: latitude() const
 {
-    return (this->Latitude);
+    return (Latitude);
 }
 double Coordinates :: longitude() const
 {
-    return (this->Longitude);
+    return (Longitude);
 }
 
 Distance Coordinates :: distance(Coordinates city) const
 {
     
-    double x=this->Latitude - city.Latitude;
-    double y=this->Longitude - city.Longitude;
+    double x=Latitude - city.Latitude;
+    double y=Longitude - city.Longitude;
     double d=hypot(x,y);
     Distance dystans(x, y, d);
     return dystans;
-    
      
 }
 Coordinates Coordinates :: closestFrom(Coordinates city1, Coordinates city2) const
 {
     double a;
     double b;
-    Distance dystans1=this->distance(city1);
-    Distance dystans2=this->distance(city2);
+    Distance dystans1=distance(city1);
+    Distance dystans2=distance(city2);
     a=dystans1.dist();
     b=dystans2.dist();
 
