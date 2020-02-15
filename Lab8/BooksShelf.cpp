@@ -1,11 +1,6 @@
 #include "BooksShelf.h"
 
-BooksShelf :: BooksShelf(int _size)
-{
-    size=_size;
-    books=new Book[size];
-    p=0;
-}
+
 BooksShelf :: BooksShelf(const BooksShelf& copy)
 {
     size=copy.size;
@@ -22,9 +17,9 @@ void BooksShelf :: add(Book b)
     books[p]=b;
     p++;
 }
-void BooksShelf :: remove(int p)
+void BooksShelf :: remove(int n)
 {
-    for(int i=p;i<size-1;i++)
+    for(int i=n;i<size-1;i++)
     {
        books[i]=books[i+1];
     }
@@ -35,17 +30,17 @@ void BooksShelf :: print() const
     int pom=0;
     for(int i=0; i<size; i++)
     {
-        if(books[i].title.length()>pom)
-            pom=books[i].title.length();
+        if(books[i].GetTitle().length()>pom)
+            pom=books[i].GetTitle().length();
     }
     for(int i=0; i<size; i++)
     {   
-        div_t pom2=div(pom-books[i].title.length(), 2);
+        div_t pom2=div(pom-books[i].GetTitle().length(), 2);
         for(int j=0;j<pom2.quot;j++)
         {
             std :: cout << " ";
         }
-        std :: cout << books[i].title;
+        std :: cout << books[i].GetTitle();
         for(int j=0;j<pom2.quot;j++)
         {
             std :: cout << " ";

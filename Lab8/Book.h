@@ -6,12 +6,16 @@
 
 using std :: string;
 
+
+/**
+ * represent book
+ */
 class Book
 {
-    friend class BooksShelf;
-    public:
-    string title; // zmienna przchowujaca tytul ksiazki
-    Book();
-    Book(string _title); //konstruktor klasy
+public:
+    Book(string _title="Unknown"): title(_title) {} /// A constructor
+    string GetTitle(){return title;}
+private:
+    string title; /// title
 
 };

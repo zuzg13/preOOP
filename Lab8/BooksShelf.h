@@ -7,21 +7,40 @@
 using std :: string;
 
 class BooksShelf
-{   
-
-    private:
-    Book *books; //tablica ksiazek czyli klas Book
-    int size; //rozmiar tablicy
-    int p; //indeks ostatniej ksiazki na polce
-    
-    
+{
     public:
-    BooksShelf(int);  // konstruktor "klasyczny"
-    BooksShelf(const BooksShelf&); // konstruktor kopiujacy
-    ~BooksShelf(); // destruktor
-    void add(Book); //metoda dodajaca nowa ksiazki czyli obiekty klasy Book na polke
-    void remove(int); // metoda usuwajaca ksiazki (obiekty klasy Book)
-    void print() const; // funkcja wypisujaca zawartosc tablicy 
+    ///A constructor
+    BooksShelf(int _size=1)
+    {
+        size=_size;
+        books=new Book[size];
+        p=0;
+    }
+    ///A copying constrtuctor
+    BooksShelf(const BooksShelf&);
+    /// A destructor
+    ~BooksShelf();
+    /**
+     * Add new "books" to shelf
+     *
+     * @param b - new book
+     */
+    void add(Book b);
+    /**
+     * Delete "books" from shelf and move other books
+     *
+     * @oaram p - number of book to delete
+     */
+    void remove(int n);
+    /**
+     * Print all books from shelf
+     */
+    void print() const;
+
+private:
+    Book *books;///Shelf with books - array of Book objects
+    int size; ///size of shelf/array
+    int p; ///index of last book on shelf
         
 
 };
