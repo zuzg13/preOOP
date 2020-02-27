@@ -1,26 +1,4 @@
-// Celem zadania jest przećwiczenie konstruktorów,
-// a także funkcji i zmiennych statycznych
-
-// wektor można przedstawić np. we współrzędnych biegunowych lub kartezjańskich
-// lecz konstruktor z dwoma argumentami double byłby niejednoznaczny:
-// Vector2D(double x, double y);
-// Vector2D(double r, double phi); // żle!
-// Można użyć tzw. named constructor idiom, tj. stworzyć funkcje zwracające obiekt.
-// - fromCarthesian(double x, double y);
-// - fromPolar(double r, double phi);
-
-
-// Proszę napisać klasę Vector2D, reprezentującą wektor.
-// ma on 2 współrzędne i metody:
-// - add, wylicza sumę dwóch wektorów
-// - dot, wylicza iloczyn skalarny
-// - print do wypisania wektora
-// - oraz zwracające obiekt Vector2D na podstawie współrzędnych
-// Ponadto możliwe jest zliczanie obiektów klasy.
-
-// UWAGA
-// - Proszę kompilować z flagą -std=c++11
-// - Wymagane utworzenie konstruktora przenoszącego (za brak -1 pkt)
+//This program focuses on various constructors, static functions and variables
 
 #include <iostream>
 #include "Vector2D.h"
@@ -50,7 +28,7 @@ int main() {
 	}
 	std::cout << "==== END: Number of Vector2Ds: " << Vector2D::count << std::endl;
 }
-/* wyniki
+/* output
 
 v1: (2, 3)
 v2: (3.4641, 2)

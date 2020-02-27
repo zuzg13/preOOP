@@ -27,18 +27,18 @@ Vector2D :: ~Vector2D()
 }   
 
 
-Vector2D Vector2D :: fromCarthesian(double x_, double y_)
+Vector2D Vector2D :: fromCarthesian(double _x, double _y)
 {
     Vector2D v;
-    v.x=x_;
-    v.y=y_;
+    v.x=_x;
+    v.y=_y;
     return v;
 }
-Vector2D Vector2D :: fromPolar(double r_, double phi_)
+Vector2D Vector2D :: fromPolar(double _r, double _phi)
 {
     Vector2D v;
-    v.x=r_*cos((phi_*2*M_PI)/360.);
-    v.y=r_*sin((phi_*2*M_PI)/360.);
+    v.x= _r * cos((_phi * 2 * M_PI) / 360.);
+    v.y= _r * sin((_phi * 2 * M_PI) / 360.);
     return v;
 }
 Vector2D Vector2D :: add(const Vector2D& v2) const
@@ -54,9 +54,9 @@ double Vector2D :: dot(const Vector2D& v2) const
     m=x*(v2.x) + y*(v2.y);
     return m;
 }
-void Vector2D :: print(string napis) const
+void Vector2D :: print(string str) const
 {
-    std :: cout << napis <<"("<< x << ", " << y << ")" << std :: endl;
+    std :: cout << str <<"("<< x << ", " << y << ")" << std :: endl;
 
 }
 
