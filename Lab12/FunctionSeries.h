@@ -5,7 +5,7 @@
 
 class FunctionSeries
 {   
-    public:
+public:
     FunctionSeries()=default;
     ~FunctionSeries()
     {
@@ -18,7 +18,7 @@ class FunctionSeries
     double calc(double);
     
     
-    private:
+private:
     std::vector<std::function<double(double)>>table;
     std::vector<double> wyniki;
 

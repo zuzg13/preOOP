@@ -4,27 +4,42 @@
 #pragma once
 
 class Linear {
-    
-    public:
+/// This class represents linear function y = a*x + b
+public:
+    ///A constructor
     Linear(double _a =1., double _b=1.): a(_a) , b(_b) {}
-    double operator () (double) const;
-    //std::function<double(double)> lin=Linear();
+    /**Overloading operator ()
+     *
+     * @param _x - value of x
+     * @return value of y
+     */
+    double operator () (double _x) const;
 
-    private:
-    double a;
-    double b;
+
+private:
+    double a; ///a
+    double b; ///b
 
 };
 
 class Sin {
-    
-    public:
 
-    Sin(double _a=1., double _b=1.){  lins=Linear(_a, _b); };
-    double operator () (double) const;
-    //std::function<double(double)>sinus=Sin();
+    /// This class represents sinus function  - sin(a*x +b)
     
-    private:
+public:
+    ///A constructor
+    Sin(double _a=1., double _b=1.){  lins=Linear(_a, _b); }
+    /**
+     * Overloading operator ()
+     *
+     * @param _x - value of x
+     * @return value of sin(a*_x + b)
+     */
+    double operator () (double _x) const;
+
+    
+private:
+    ///Function
     Linear lins;
 
 };
@@ -32,10 +47,10 @@ class Sin {
 
 class Sqrt{
     
-    public:
+public:
     Sqrt()=default;
     double operator () (double) const;
-    //std::function<double(double)> squareroot=Sqrt();
+
     
 };
 

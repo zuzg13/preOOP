@@ -7,7 +7,7 @@ void FunctionSeries :: insert(std::function<double(double)> x )
 
 double FunctionSeries :: calc(double _x)
 {
-    //rec(lin(squareroot(sinus(x))));
+
     int i=1;
     wyniki.clear();
     wyniki.reserve(table.size());

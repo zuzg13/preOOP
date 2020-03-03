@@ -42,7 +42,7 @@
 
 #include <iostream>
 #include "check_number.h"
-#include "check_number.h"
+
 
 int main() {
     const char* visa = "4222222222222";

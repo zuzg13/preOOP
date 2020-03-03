@@ -12,6 +12,12 @@ Fraction :: Fraction()
     mian=1;
 }
 
+Fraction :: Fraction(const Fraction & f)
+{
+    licz=f.licz;
+    mian=f.mian;
+}
+
 int Fraction :: getLicz() const 
 {
     return licz;
@@ -21,7 +27,7 @@ int Fraction :: getMian() const
     return mian;
 }
 
-void Fraction :: simplify() noexcept
+void Fraction :: simplify()
 {
     int d=Maths::gcd(licz, mian);
     if(d!=1)
@@ -31,20 +37,13 @@ void Fraction :: simplify() noexcept
     }
 }   
 
-Fraction :: operator double() const noexcept
+Fraction :: operator double() const
 {
     return static_cast<double>(licz)/static_cast<double>(mian);
 }
 
-/*Fraction operator* (int c, const Fraction & f)
-{
-    int a = c * f.getLicz();
-    int b= f.getMian();
-    Fraction f3(a,b);
-    return f3;
 
-}*/
-Fraction Fraction :: operator+ (const Fraction &f1) const 
+const Fraction Fraction :: operator+ (const Fraction &f1) const
 {
     int a = licz*f1.getMian() + mian*f1.getLicz();
     int b = mian * f1.getMian();
@@ -64,4 +63,9 @@ Fraction Fraction :: operator- (const Fraction &f1) const
 std::ostream& operator<< (std::ostream& strm, const Fraction &f)
 {
     return (strm << f.getLicz() << "/" << f.getMian());
+}
+
+Fraction operator* (int c, const Fraction & f)
+{
+    return Fraction(c * f.getLicz(),f.getMian());
 }
