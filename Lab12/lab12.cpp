@@ -1,28 +1,5 @@
-// Calem zadania jest przećwiczenie operatora() i jego 
-// wykorzystania w połączeniu z std::function.
-//
-// Proszę napisać klasy reprezentujące funkcje matematyczne:
-// - Sin -- sin(a*x+b)
-// - Sqrt -- pierwiastek 2go stopnia
-// - Linear -- funkcja liniowa a*x+b
-// 
-// Mają one operator(), który zwraca odpowiednią wartość funkcji.
-// (mogą być we wspólnych plikach Functions.h i Functions.cpp)
-// 
-// Proszę także napisać klasę FunctionSeries, która przyjmuje
-// i przechowuje obiekty funkcyjne i pozwala na obliczenie wyniku
-// kolejnych wywołań, np. dla dwóch funkcji w serii:
-//
-// FunctionSeries f 
-// ...
-// f.calc(x) := f1( f2(x) )
-//
-// oraz zwraca wyniki pośrednich obliczeń przez operator[].
-// UWAGA: zalecane, by użyć std::vector
-//
-// Pliku lab12.cpp nie modyfikujemy (poza odkomentowaniem "błędnych" linii).
-// Program proszę kompilować przynajmniej z flaga -Wall.
-// 
+// Overloading operator() and std::function
+
 
 #include "Functions.h"
 #include "FunctionSeries.h"
@@ -58,14 +35,14 @@ int main ()
   x=0.5;
   std::cout << "-- dla x=0.5:\t" << fs.calc(x) << std::endl;
 
-  // operator[] zwracający wyniki pośrenich obliczeń 
-  std::cout << "posrednie wyniki: " << std::endl;
+  // operator[]
+  std::cout << ": " << std::endl;
   double sinx = sinus(x);
   std::cout << sinx << ", " << fs[0] << std::endl; 
   std::cout << squareroot(sinx) << ", " << fs[1] << std::endl; 
   std::cout << lin(squareroot(sinx)) << ", " << fs[2] << std::endl; 
 }
-/* wynik dzialania programu:
+/* outuput
 
 0.866025
 3.16228
